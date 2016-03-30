@@ -1,4 +1,9 @@
 require 'rspec'
+require_relative '../../model/tecnologyBuilder/tecnology_builder'
+require_relative '../../model/electronic_entries/hdmi'
+require_relative '../../model/tecnologies/led'
+require_relative '../../model/screens/computer'
+require_relative '../../model/rigid_disks/solid_disk'
 
 describe 'Computer con monitor led_hdmi y placa integrada + disco solido' do
 

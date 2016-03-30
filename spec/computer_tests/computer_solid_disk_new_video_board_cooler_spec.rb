@@ -3,14 +3,15 @@ require_relative '../../model/tecnologyBuilder/tecnology_builder'
 require_relative '../../model/electronic_entries/hdmi'
 require_relative '../../model/tecnologies/led'
 require_relative '../../model/screens/computer'
-require_relative '../../model/rigid_disks/magnetic_disk'
-require_relative '../../model/video_boards/old_video_board'
+require_relative '../../model/rigid_disks/solid_disk'
+require_relative '../../model/video_boards/cooler'
 
-describe 'Computer con monitor led_hdmi y placa vieja + disco magnetico' do
+describe 'Computer con monitor led_hdmi y placa integrada + disco solido + 2 cooler' do
 
   before :each do
     @monitor = TecnologyBuilder.monitor_con_ppp_y_size(50,120).extend(HDMI).extend(LED)
-    @computadora = Object.new.extend(Computer).extend(@monitor).extend(MagneticDisk).extend(OldVideoBoard)
+    @integrated_board=TecnologyBuilder.integrated_video_board_with_consumption(15)
+    @computadora = Object.new.extend(Computer).extend(@monitor)..extend(Cooler).extend(Cooler).extend(SolidDisk).extend(@integrated_board)
 
   end
 
@@ -31,7 +32,7 @@ describe 'Computer con monitor led_hdmi y placa vieja + disco magnetico' do
 
   it 'esParaVideoJuegos debe ser true' do
 
-    expect(@computadora.isForVideoGames).to eq true
+    expect(@computadora.isForVideoGames).to eq false
   end
 
 end

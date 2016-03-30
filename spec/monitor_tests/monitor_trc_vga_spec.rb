@@ -1,27 +1,30 @@
 require 'rspec'
+require_relative '../../model/tecnologyBuilder/tecnology_builder'
+require_relative '../../model/tecnologies/trc'
+require_relative '../../model/electronic_entries/vga'
 
-describe 'Monitor led con hdmi' do
+describe 'MonitorModel led con hdmi' do
 
   before :each do
-    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(Led).extend(VGA)
+    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(TRC).extend(VGA)
   end
 
-  it 'Monitor sabe responder a consumo' do
+  it 'MonitorModel sabe responder a consumo' do
 
     expect(@monitor.respond_to? 'consumo').to be true
   end
 
-  it 'Un Monitor sabe responder a tasa de refresco' do
+  it 'Un MonitorModel sabe responder a tasa de refresco' do
 
     expect(@monitor.respond_to? 'tasa_refresco').to be true
   end
 
-  it 'Un Monitor sabe responder a definicion maxima' do
+  it 'Un MonitorModel sabe responder a definicion maxima' do
 
     expect(@monitor.respond_to? 'definicion_maxima').to be true
   end
 
-  it 'Un Monitor sabe responder si es apto para videojuegos' do
+  it 'Un MonitorModel sabe responder si es apto para videojuegos' do
 
     expect(@monitor.respond_to? 'esParaVideoJuegos').to be true
   end

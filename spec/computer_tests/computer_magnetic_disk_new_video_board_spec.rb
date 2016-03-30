@@ -1,4 +1,10 @@
 require 'rspec'
+require_relative '../../model/tecnologyBuilder/tecnology_builder'
+require_relative '../../model/electronic_entries/hdmi'
+require_relative '../../model/tecnologies/led'
+require_relative '../../model/screens/computer'
+require_relative '../../model/rigid_disks/magnetic_disk'
+require_relative '../../model/video_boards/new_video_board'
 
 describe 'Computer con monitor led_hdmi y placa nueva + disco magnetico' do
 

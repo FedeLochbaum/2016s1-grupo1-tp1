@@ -1,4 +1,7 @@
 require 'rspec'
+require_relative '../../model/tecnologyBuilder/tecnology_builder'
+require_relative '../../model/tecnologies/led'
+require_relative '../../model/electronic_entries/hdmi'
 
 describe 'MOnitor led con hdmi' do
 
@@ -6,22 +9,22 @@ describe 'MOnitor led con hdmi' do
     @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(Led).extend(HDMI)
   end
 
-  it 'Un Monitor sabe responder a consumo' do
+  it 'Un MonitorModel sabe responder a consumo' do
 
     expect(@monitor.respond_to? 'consumo').to be true
   end
 
-  it 'Un Monitor sabe responder a tasa de refresco' do
+  it 'Un MonitorModel sabe responder a tasa de refresco' do
 
     expect(@monitor.respond_to? 'tasa_refresco').to be true
   end
 
-  it 'Un Monitor sabe responder a definicion maxima' do
+  it 'Un MonitorModel sabe responder a definicion maxima' do
 
     expect(@monitor.respond_to? 'definicion_maxima').to be true
   end
 
-  it 'Un Monitor sabe responder si es apto para videojuegos' do
+  it 'Un MonitorModel sabe responder si es apto para videojuegos' do
 
     expect(@monitor.respond_to? 'esParaVideoJuegos').to be true
   end

@@ -1,3 +1,4 @@
+require_relative '../../model/video_boards/ineficient'
 module OldVideoBoard
   include Ineficient
 

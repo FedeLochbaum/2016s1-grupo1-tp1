@@ -1,8 +1,9 @@
+require_relative '../../model/screens/tv'
 module SmartTv
-   include Tv
+   include TV
 
   def default_refresh_rate
-    super * 1.5
+    1.5 * super
   end
 
 end

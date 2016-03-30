@@ -1,3 +1,4 @@
+require_relative '../../model/tecnologies/analogic'
 module TRC
   include Analogic
 

@@ -1,9 +1,12 @@
 require 'rspec'
+require_relative '../../model/tecnologyBuilder/tecnology_builder'
+require_relative '../../model/tecnologies/trc'
+require_relative '../../model/electronic_entries/hdmi'
 
 describe 'Tv led con hdmi' do
 
   before :each do
-    @tv = Object.new.extend(TecnologyBuilder.tv_con_ppp_y_size(50,120)).extend(Led).extend(HDMI)
+    @tv = Object.new.extend(TecnologyBuilder.tv_con_ppp_y_size(50,120)).extend(TRC).extend(HDMI)
   end
 
   it 'Una tv sabe responder a consumo' do

@@ -1,3 +1,4 @@
+require_relative '../../model/tecnologies/digitable'
 module LED
   include Digitable
 

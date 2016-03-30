@@ -1,3 +1,5 @@
+require_relative '../../model/electronic_entries/old'
+require_relative '../../model/tecnologies/analogic'
 module AV
   include Analogic
   include Old

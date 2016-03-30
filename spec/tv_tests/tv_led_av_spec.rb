@@ -1,4 +1,7 @@
 require 'rspec'
+require_relative '../../model/tecnologyBuilder/tecnology_builder'
+require_relative '../../model/tecnologies/led'
+require_relative '../../model/electronic_entries/av'
 
 describe 'Tv led con hdmi' do
 
