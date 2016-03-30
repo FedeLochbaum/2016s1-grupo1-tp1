@@ -1,4 +1,7 @@
 require 'rspec'
+require 'model/TecnologyBuilder/tecnology_builder'
+require 'model/tecnologies/led'
+require 'model/electronic_entries/av'
 
 describe 'Monitor led con hdmi' do
 

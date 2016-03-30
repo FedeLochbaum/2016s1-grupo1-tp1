@@ -1,3 +1,7 @@
+require 'model/screens/monitor'
+require 'model/screens/tv'
+require 'model/video_boards/integrated_video_board'
+
 class TecnologyBuilder
 
   def self.monitor_con_ppp_with_size(ppp,size)
