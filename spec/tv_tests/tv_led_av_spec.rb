@@ -6,7 +6,7 @@ require_relative '../../model/electronic_entries/av'
 describe 'Tv led con hdmi' do
 
   before :each do
-    @tv = Object.new.extend(TecnologyBuilder.tv_con_ppp_y_size(50,120)).extend(Led).extend(AV)
+    @tv = Object.new.extend(TecnologyBuilder.tv_con_ppp_with_size(50,120)).extend(Led).extend(AV)
   end
 
   it 'Una tv sabe responder a consumo' do

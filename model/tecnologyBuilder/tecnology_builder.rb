@@ -15,14 +15,14 @@ class TecnologyBuilder
   end
 
   def self.tv_con_ppp_with_size(ppp,size)
-    AnonymousMonitor
+    Class.new < AnonymousMonitor{
     includes TV
     def ppp
       ppp
     end
     def size
       size
-    end
+    end}
   end
 
   def self.integrated_video_board_with_consumption(consumption)
