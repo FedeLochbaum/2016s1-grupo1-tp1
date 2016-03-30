@@ -1,11 +1,9 @@
-class SolidDisk
+module SolidDisk
+  attr_accessor :constant_consumption
 
-  def initialize(constant_consumption)
-    @constant_consumption=constant_consumption
-  end
 
   def consumption
-    @constant_consumption + super
+    constant_consumption + super
   end
 
 end

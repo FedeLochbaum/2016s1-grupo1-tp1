@@ -3,8 +3,9 @@ require 'rspec'
 describe 'Computer con monitor led_hdmi y placa nueva + disco magnetico' do
 
   before :each do
-    @monitor = Monitor.new(50,120).extend(HDMI).extend(LED)
-    @computadora = Computer.new(@monitor).extend(MagneticDisk).extend(NewVideoBoard)
+    @monitor = TecnologyBuilder.monitor_con_ppp_y_size(50,120).extend(HDMI).extend(LED)
+    @computadora = Object.new.extend(Computer).extend(@monitor).extend(MagneticDisk).extend(NewVideoBoard)
+
   end
 
   it 'Una computadora sabe responder a consumo' do

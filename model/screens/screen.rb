@@ -1,11 +1,6 @@
-class Screen
+module Screen
 
   attr_accessor :size,:ppp
-
-  def initialize(size,ppp)
-    @size=size
-    @ppp=ppp
-  end
 
 
   def refresh_rate

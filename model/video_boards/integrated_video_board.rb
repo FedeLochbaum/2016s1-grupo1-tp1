@@ -1,4 +1,4 @@
-class MotherBoard
+class IntegratedVideoBoard
   include Ineficient
 
   def isForVideoGames

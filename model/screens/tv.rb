@@ -1,4 +1,5 @@
-class TV < Screen
+module TV
+  include Screen
 
   def default_refresh_rate
     90

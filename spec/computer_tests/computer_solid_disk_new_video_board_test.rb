@@ -4,7 +4,7 @@ describe 'Computer con monitor led_hdmi y placa nueva + disco solido' do
 
   before :each do
     @monitor = Monitor.new(50,120).extend(HDMI).extend(LED)
-    @computadora = Computer.new(@monitor).extend(SolidDisk).extend(NewVideoBoard)
+    @computadora = Object.new.extend(Computer).extend(@monitor).extend(SolidDisk).extend(NewVideoBoard)
   end
 
   it 'Una computadora sabe responder a consumo' do

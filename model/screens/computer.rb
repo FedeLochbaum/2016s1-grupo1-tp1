@@ -1,10 +1,6 @@
-class Computer
+module Computer
 
-  def initialize(screen)
-    @screen=screen
-  end
-
-  def consumo
+  def consumption
     @screen.consumption + super
   end
 end

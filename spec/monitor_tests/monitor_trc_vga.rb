@@ -3,7 +3,7 @@ require 'rspec'
 describe 'Monitor led con hdmi' do
 
   before :each do
-    @monitor = Monitor.new(50,120).extend(Led).extend(VGA)
+    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(Led).extend(VGA)
   end
 
   it 'Monitor sabe responder a consumo' do
