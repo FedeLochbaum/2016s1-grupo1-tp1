@@ -24,7 +24,7 @@ describe 'Computer con monitor led_hdmi y placa vieja + disco solido' do
 
   it 'EL consumo debe ser  watts/h' do
 
-    expect(@computadora.consumption).to eq 15
+    expect(@computadora.consumption).to eq 75
   end
 
   it 'esParaVideoJuegos debe ser true' do

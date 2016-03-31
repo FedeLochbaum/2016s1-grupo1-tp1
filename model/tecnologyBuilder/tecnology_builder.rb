@@ -45,8 +45,6 @@ class TecnologyBuilder
     }
   end
 
-
-
   def self.magnetic_disk_with_rpm(rpm)
     @rpm=rpm
     Module.new{

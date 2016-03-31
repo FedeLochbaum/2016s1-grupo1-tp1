@@ -1,6 +1,12 @@
 module Ineficient
 
   def consumption
-    fixed_consumption + super
+    if defined? (fixed_consumption)
+      fixed_consumption + super
+    else
+    super
+
+    end
   end
+
 end
