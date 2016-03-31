@@ -6,27 +6,27 @@ require_relative '../../model/electronic_entries/hdmi'
 describe 'MOnitor led con hdmi' do
 
   before :each do
-    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(Led).extend(HDMI)
+    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(LED).extend(HDMI)
   end
 
   it 'Un MonitorModel sabe responder a consumo' do
 
-    expect(@monitor.respond_to? 'consumo').to be true
+    expect(@monitor.respond_to? 'consumption').to be true
   end
 
   it 'Un MonitorModel sabe responder a tasa de refresco' do
 
-    expect(@monitor.respond_to? 'tasa_refresco').to be true
+    expect(@monitor.respond_to? 'refresh_rate').to be true
   end
 
   it 'Un MonitorModel sabe responder a definicion maxima' do
 
-    expect(@monitor.respond_to? 'definicion_maxima').to be true
+    expect(@monitor.respond_to? 'max_definition').to be true
   end
 
   it 'Un MonitorModel sabe responder si es apto para videojuegos' do
 
-    expect(@monitor.respond_to? 'esParaVideoJuegos').to be true
+    expect(@monitor.respond_to? 'isForVideoGames').to be true
   end
 
   it 'EL monitor no debe ser apto para video juegos' do
@@ -34,18 +34,18 @@ describe 'MOnitor led con hdmi' do
     expect(@monitor.isForVideoGames).to be true
   end
 
-  it 'EL consumo debe ser 60 watts/h' do
+  it 'EL consumo debe ser 55 watts/h' do
 
     expect(@monitor.consumption).to eq 60
   end
 
-  it 'La tasa de refresco debe ser 90' do
+  it 'La tasa de refresco debe ser 50' do
 
-    expect(@monitor.refresh_rate).to eq 90
+    expect(@monitor.refresh_rate).to eq 120
   end
 
-  it 'La definicion maxima debe ser 4242.640687119' do
+  it 'La definicion maxima debe ser 480' do
 
-    expect(@monitor.max_definition).to eq 4242.640687119
+    expect(@monitor.max_definition).to eq 587.8775382679627
   end
 end
