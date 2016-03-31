@@ -6,37 +6,37 @@ require_relative '../../model/electronic_entries/av'
 describe 'Tv led con hdmi' do
 
   before :each do
-    @tv = Object.new.extend(TecnologyBuilder.tv_con_ppp_y_size(50,120)).extend(TRC).extend(AV)
+    @tv = Object.new.extend(TecnologyBuilder.tv_con_ppp_with_size(50,120)).extend(TRC).extend(AV)
   end
 
   it 'Una tv sabe responder a consumo' do
 
-    expect(@tv.respond_to? 'consumo').to be true
+    expect(@tv.respond_to? 'consumption').to be true
   end
 
   it 'Una tv sabe responder a tasa de refresco' do
 
-    expect(@tv.respond_to? 'tasa_refresco').to be true
+    expect(@tv.respond_to? 'refresh_rate').to be true
   end
 
   it 'Una tv sabe responder a definicion maxima' do
 
-    expect(@tv.respond_to? 'definicion_maxima').to be true
+    expect(@tv.respond_to? 'max_definition').to be true
   end
 
   it 'Una tv sabe responder si es apta para videojuegos' do
 
-    expect(@tv.respond_to? 'esParaVideoJuegos').to be true
+    expect(@tv.respond_to? 'isForVideoGames').to be true
   end
 
   it 'Una tv no debe ser apto para video juegos' do
 
-    expect(@tv.isForVideoGames).to be true
+    expect(@tv.isForVideoGames).to be false
   end
 
-  it 'EL consumo debe ser 255 watts/h' do
+  it 'EL consumo debe ser 55 watts/h' do
 
-    expect(@tv.consumption).to eq 255
+    expect(@tv.consumption).to eq 275
   end
 
   it 'La tasa de refresco debe ser 50' do

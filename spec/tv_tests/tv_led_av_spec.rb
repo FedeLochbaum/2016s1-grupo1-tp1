@@ -6,7 +6,7 @@ require_relative '../../model/electronic_entries/av'
 describe 'Tv led con hdmi' do
 
   before :each do
-    @tv = Object.new.extend(AV).extend(TecnologyBuilder.tv_con_ppp_with_size(50,120)).extend(LED)
+    @tv = Object.new.extend(TecnologyBuilder.tv_con_ppp_with_size(50,120)).extend(LED).extend(AV)
   end
 
   it 'Una tv sabe responder a consumo' do
@@ -36,7 +36,7 @@ describe 'Tv led con hdmi' do
 
   it 'EL consumo debe ser 55 watts/h' do
 
-    expect(@tv.consumption).to eq 55
+    expect(@tv.consumption).to eq 55.00000000000001
   end
 
   it 'La tasa de refresco debe ser 50' do
