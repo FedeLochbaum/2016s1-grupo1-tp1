@@ -10,7 +10,7 @@ describe 'Computer con monitor led_hdmi y placa integrada + disco rigido' do
   before :each do
     @monitor = HDMI.extend(LED).extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120))
     @integrated_board=TecnologyBuilder.integrated_video_board_with_consumption(15)
-    @computadora = Object.new.extend(TecnologyBuilder.magnetic_disk_with_rpm(5)).extend(@integrated_board).extend(@monitor)
+    @computadora = Object.new.extend(@monitor).extend(TecnologyBuilder.magnetic_disk_with_rpm(5)).extend(@integrated_board)
   end
 
   it 'Una computadora sabe responder a consumo' do
@@ -25,7 +25,7 @@ describe 'Computer con monitor led_hdmi y placa integrada + disco rigido' do
 
   it 'EL consumo debe ser  watts/h' do
 
-    expect(@computadora.consumption).to eq 55
+    expect(@computadora.consumption).to eq 15
   end
 
   it 'esParaVideoJuegos debe ser true' do

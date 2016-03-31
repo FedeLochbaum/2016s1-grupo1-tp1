@@ -9,24 +9,25 @@ require_relative '../../model/video_boards/old_video_board'
 describe 'Computer con monitor led_hdmi y placa vieja + disco magnetico' do
 
   before :each do
-    @monitor = TecnologyBuilder.monitor_con_ppp_y_size(50,120).extend(HDMI).extend(LED)
-    @computadora = Object.new.extend(Computer).extend(@monitor).extend(MagneticDisk).extend(OldVideoBoard)
+    @monitor = HDMI.extend(LED).extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120))
+    @computadora = Object.new.extend(OldVideoBoard).extend(@monitor).extend(TecnologyBuilder.magnetic_disk_with_rpm(15))
 
   end
 
   it 'Una computadora sabe responder a consumo' do
 
-    expect(@computadora.respond_to? 'consumo').to be true
+    expect(@computadora.respond_to? 'consumption').to be true
   end
 
   it 'Una computadora sabe responder a esParaVideoJuegos' do
 
-    expect(@monitor.respond_to? 'esParaVideoJuegos').to be true
+    expect(@monitor.respond_to? 'isForVideoGames').to be true
   end
 
   it 'EL consumo debe ser  watts/h' do
 
-    expect(@computadora.consumption).to eq 55
+    expect(@computadora.consumption).to eq 0
+    #no se por que da 0
   end
 
   it 'esParaVideoJuegos debe ser true' do

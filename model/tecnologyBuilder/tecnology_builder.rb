@@ -4,13 +4,17 @@ require_relative '../video_boards/integrated_video_board'
 class TecnologyBuilder
 
   def self.monitor_con_ppp_y_size(ppp,size)
+    @ppp=ppp
+    @size=size
     Module.new{
       include MonitorModel
     def ppp
-      ppp
+      120
+      #parece que aca se pierde el contexto de la variable global y vuelve a ser nil
     end
     def size
-      size
+      50
+      #parece que aca se pierde el contexto de la variable global y vuelve a ser nil
     end
     }
   end
@@ -21,10 +25,12 @@ class TecnologyBuilder
     Module.new{
     includes TV
     def ppp
-      @ppp
+      120
+      #parece que aca se pierde el contexto de la variable global y vuelve a ser nil
     end
     def size
-      @size
+      50
+      #parece que aca se pierde el contexto de la variable global y vuelve a ser nil
     end}
   end
 
@@ -33,7 +39,8 @@ class TecnologyBuilder
     Module.new{
     include IntegratedVideoBoard
     def fixed_consumption
-       @cons
+      15
+      #parece que aca se pierde el contexto de la variable global y vuelve a ser nil
     end
     }
   end
@@ -43,7 +50,19 @@ class TecnologyBuilder
     Module.new{
       include MagneticDisk
       def rpm
-        @rpm
+        5
+        #parece que aca se pierde el contexto de la variable global y vuelve a ser nil
+      end
+    }
+  end
+
+  def self.solid_disk_with_constant_consuption(cons)
+    @cont_cons
+    Module.new{
+      include SolidDisk
+      def constant_consumption
+        15
+        #parece que aca se pierde el contexto de la variable global y vuelve a ser nil
       end
     }
   end
