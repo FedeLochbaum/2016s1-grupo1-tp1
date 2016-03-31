@@ -9,7 +9,7 @@ describe 'Computer con monitor led_hdmi y placa nueva + disco solido' do
 
   before :each do
     @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(LED).extend(HDMI)
-    @computadora = @monitor.extend(NewVideoBoard).extend(SolidDisk)
+    @computadora = @monitor.extend(NewVideoBoard).extend(TecnologyBuilder.solid_disk_with_constant_consuption(10))
   end
 
   it 'Una computadora sabe responder a consumo' do
@@ -24,7 +24,7 @@ describe 'Computer con monitor led_hdmi y placa nueva + disco solido' do
 
   it 'EL consumo debe ser  watts/h' do
 
-    expect(@computadora.consumption).to eq 15
+    expect(@computadora.consumption).to eq 75
   end
 
   it 'esParaVideoJuegos debe ser true' do
