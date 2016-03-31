@@ -2,30 +2,29 @@ require 'rspec'
 require_relative '../../model/tecnologyBuilder/tecnology_builder'
 require_relative '../../model/electronic_entries/hdmi'
 require_relative '../../model/tecnologies/led'
-require_relative '../../model/screens/computer'
 require_relative '../../model/rigid_disks/solid_disk'
 require_relative '../../model/video_boards/new_video_board'
 
 describe 'Computer con monitor led_hdmi y placa nueva + disco solido' do
 
   before :each do
-    @monitor = Monitor.new(50,120).extend(HDMI).extend(LED)
-    @computadora = Object.new.extend(Computer).extend(@monitor).extend(SolidDisk).extend(NewVideoBoard)
+    @monitor = HDMI.extend(LED).extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120))
+    @computadora = Object.new.extend(@monitor).extend(SolidDisk).extend(NewVideoBoard)
   end
 
   it 'Una computadora sabe responder a consumo' do
 
-    expect(@computadora.respond_to? 'consumo').to be true
+    expect(@computadora.respond_to? 'consumption').to be true
   end
 
   it 'Una computadora sabe responder a esParaVideoJuegos' do
 
-    expect(@monitor.respond_to? 'esParaVideoJuegos').to be true
+    expect(@monitor.respond_to? 'isForVideoGames').to be true
   end
 
   it 'EL consumo debe ser  watts/h' do
 
-    expect(@computadora.consumption).to eq 55
+    expect(@computadora.consumption).to eq 15
   end
 
   it 'esParaVideoJuegos debe ser true' do
