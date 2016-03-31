@@ -23,7 +23,7 @@ class TecnologyBuilder
     @ppp=ppp
     @size=size
     Module.new{
-    includes TV
+    include TV
     def ppp
       120
       #parece que aca se pierde el contexto de la variable global y vuelve a ser nil

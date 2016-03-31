@@ -2,7 +2,6 @@ require 'rspec'
 require_relative '../../model/tecnologyBuilder/tecnology_builder'
 require_relative '../../model/electronic_entries/hdmi'
 require_relative '../../model/tecnologies/led'
-require_relative '../../model/screens/computer'
 require_relative '../../model/rigid_disks/magnetic_disk'
 require_relative '../../model/video_boards/old_video_board'
 
@@ -10,7 +9,7 @@ describe 'Computer con monitor led_hdmi y placa vieja + disco magnetico' do
 
   before :each do
     @monitor = HDMI.extend(LED).extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120))
-    @computadora = Object.new.extend(OldVideoBoard).extend(@monitor).extend(TecnologyBuilder.magnetic_disk_with_rpm(15))
+    @computadora = Object.new.extend(@monitor).extend(OldVideoBoard).extend(TecnologyBuilder.magnetic_disk_with_rpm(15))
 
   end
 

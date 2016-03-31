@@ -12,7 +12,11 @@ module Screen
   end
 
   def consumption
-    super
+    if defined?(super)
+      super
+    else
+      0
+    end
   end
 
 end
