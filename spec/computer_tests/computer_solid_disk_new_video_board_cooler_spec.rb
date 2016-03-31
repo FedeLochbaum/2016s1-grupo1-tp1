@@ -8,9 +8,8 @@ require_relative '../../model/video_boards/cooler'
 describe 'Computer con monitor led_hdmi y placa integrada + disco solido + 2 cooler' do
 
   before :each do
-    @monitor = TecnologyBuilder.monitor_con_ppp_y_size(50,120).extend(HDMI).extend(LED)
-    @integrated_board=TecnologyBuilder.integrated_video_board_with_consumption(15)
-    @computadora = Object.new.extend(@monitor).extend(Cooler).extend(Cooler).extend(SolidDisk).extend(@integrated_board)
+    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(LED).extend(HDMI)
+    @computadora = @monitor.extend(Cooler).extend(Cooler).extend(TecnologyBuilder.integrated_video_board_with_consumption(15)).extend(SolidDisk)
 
   end
 

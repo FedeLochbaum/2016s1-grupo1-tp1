@@ -7,9 +7,9 @@ require_relative '../../model/rigid_disks/solid_disk'
 describe 'Computer con monitor led_hdmi y placa integrada + disco solido' do
 
   before :each do
-    @monitor = LED.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(HDMI)
+    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(LED).extend(HDMI)
     @integrated_board=TecnologyBuilder.integrated_video_board_with_consumption(15)
-    @computadora = Object.new.extend(@integrated_board).extend(TecnologyBuilder.solid_disk_with_constant_consuption(15)).extend(@monitor)
+    @computadora = @monitor.extend(@integrated_board).extend(TecnologyBuilder.solid_disk_with_constant_consuption(15))
 
   end
 
@@ -25,7 +25,7 @@ describe 'Computer con monitor led_hdmi y placa integrada + disco solido' do
 
   it 'EL consumo debe ser  watts/h' do
 
-    expect(@computadora.consumption).to eq 55
+    expect(@computadora.consumption).to eq 90
   end
 
   it 'esParaVideoJuegos debe ser true' do

@@ -8,8 +8,8 @@ require_relative '../../model/video_boards/new_video_board'
 describe 'Computer con monitor led_hdmi y placa nueva + disco magnetico' do
 
   before :each do
-    @monitor = HDMI.extend(LED).extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120))
-    @computadora = Object.new.extend(NewVideoBoard).extend(@monitor).extend(TecnologyBuilder.magnetic_disk_with_rpm(5))
+    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(LED).extend(HDMI)
+    @computadora = @monitor.extend(NewVideoBoard).extend(TecnologyBuilder.magnetic_disk_with_rpm(5))
 
   end
 

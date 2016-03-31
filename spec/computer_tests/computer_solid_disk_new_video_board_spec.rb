@@ -8,8 +8,8 @@ require_relative '../../model/video_boards/new_video_board'
 describe 'Computer con monitor led_hdmi y placa nueva + disco solido' do
 
   before :each do
-    @monitor = HDMI.extend(LED).extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120))
-    @computadora = Object.new.extend(@monitor).extend(SolidDisk).extend(NewVideoBoard)
+    @monitor = Object.new.extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120)).extend(LED).extend(HDMI)
+    @computadora = @monitor.extend(NewVideoBoard).extend(SolidDisk)
   end
 
   it 'Una computadora sabe responder a consumo' do
