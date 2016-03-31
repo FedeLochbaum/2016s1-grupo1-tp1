@@ -1,8 +1,10 @@
 module MagneticDisk
-   attr_accessor :rpm
+  attr_accessor :rpm
 
   def consumption
-    (rpm * (60/10000)) + super
+    (60/10000)* rpm
   end
+
+
 
 end

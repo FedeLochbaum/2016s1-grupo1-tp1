@@ -1,5 +1,5 @@
 require_relative '../../model/video_boards/ineficient'
-class IntegratedVideoBoard
+module IntegratedVideoBoard
   include Ineficient
 
   def isForVideoGames

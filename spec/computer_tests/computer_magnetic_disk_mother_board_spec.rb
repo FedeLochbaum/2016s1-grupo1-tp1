@@ -8,19 +8,19 @@ require_relative '../../model/rigid_disks/magnetic_disk'
 describe 'Computer con monitor led_hdmi y placa integrada + disco rigido' do
 
   before :each do
-    @monitor = TecnologyBuilder.monitor_con_ppp_y_size(50,120).extend(HDMI).extend(LED)
+    @monitor = HDMI.extend(LED).extend(TecnologyBuilder.monitor_con_ppp_y_size(50,120))
     @integrated_board=TecnologyBuilder.integrated_video_board_with_consumption(15)
-    @computadora = Object.new.extend(Computer).extend(@monitor).extend(MagneticDisk).extend(@integrated_board)
+    @computadora = Object.new.extend(TecnologyBuilder.magnetic_disk_with_rpm(5)).extend(@integrated_board).extend(@monitor)
   end
 
   it 'Una computadora sabe responder a consumo' do
 
-    expect(@computadora.respond_to? 'consumo').to be true
+    expect(@computadora.respond_to? 'consumption').to be true
   end
 
   it 'Una computadora sabe responder a esParaVideoJuegos' do
 
-    expect(@monitor.respond_to? 'esParaVideoJuegos').to be true
+    expect(@monitor.respond_to? 'isForVideoGames').to be true
   end
 
   it 'EL consumo debe ser  watts/h' do

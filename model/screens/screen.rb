@@ -11,4 +11,8 @@ module Screen
     refresh_rate > 99
   end
 
+  def consumption
+    super
+  end
+
 end

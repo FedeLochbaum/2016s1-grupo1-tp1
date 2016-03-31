@@ -3,7 +3,7 @@ module LED
   include Digitable
 
   def consumption
-    1*size
+    1*size+super
   end
 
 end
